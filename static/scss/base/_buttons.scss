@@ -1,0 +1,10 @@
+
+button{
+	font-size: 0.877em;
+	border: none;
+	text-transform: uppercase;
+	margin: auto;
+	cursor: pointer;
+
+	@include main-font();
+}

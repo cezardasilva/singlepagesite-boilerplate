@@ -1,0 +1,33 @@
+
+
+@include gridle_generate_custom_class( ('text', '-', 'center','@','%state') ) {
+	text-align: center !important;
+}
+
+.text-right{
+	text-align: right !important;
+}
+
+.text-left{
+	text-align: left !important;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.text-bold{
+	font-weight: bold !important;
+}
+
+@include gridle_generate_custom_class( ('text', '-', 'vertically','@','%state') ) {
+	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-lr;
+	transform-origin: 50% 50% 0;
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg)
+}

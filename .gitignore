@@ -1,0 +1,22 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+.sass-cache/*
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+composer.phar
+.tags1
+.tags
+*.vscode
+/tmp/

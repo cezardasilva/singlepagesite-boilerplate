@@ -1,0 +1,11 @@
+
+.homepage{
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 110px); //-110px because fixed header.
+	color: $white;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	@include transition(all 0.2s);
+}

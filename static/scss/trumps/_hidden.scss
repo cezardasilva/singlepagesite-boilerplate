@@ -1,0 +1,7 @@
+
+
+@include gridle_generate_custom_class( ('hidden','@','%state') ) {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+}

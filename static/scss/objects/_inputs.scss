@@ -1,0 +1,14 @@
+
+
+#{$text-inputs-list} {
+	display: block;
+	border: 1px solid $gray;
+	border-radius: 4px;
+	margin-top: 8px;
+	padding: 8px;
+	@include placeholder{
+		font-size: 0.85em;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	};
+}

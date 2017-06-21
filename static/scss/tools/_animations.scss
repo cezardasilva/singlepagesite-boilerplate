@@ -1,0 +1,90 @@
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+@keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		transform: translate3d(0, 100%, 0);
+		visibility: visible;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
+@keyframes Spinner {
+	from{
+		transform-origin: center;
+		transform: rotate3d(0, 0, 1, -0deg);
+		-moz-transform:rotate(-0deg);
+		-webkit-transform:rotate(-0deg);
+		-o-transform:rotate(-0deg);
+		-ms-transform:rotate(-0deg);
+	}
+
+	to{
+		transform-origin: center;
+		transform: rotate3d(0, 0, 1, -360deg);
+		-moz-transform:rotate(-360deg);
+		-webkit-transform:rotate(-360deg);
+		-o-transform:rotate(-360deg);
+		-ms-transform:rotate(-360deg);
+	}
+}
+
+
+@keyframes FadeIn {
+	from{
+		transform-origin: center;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to{
+		transform-origin: center;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes FadeOut {
+	from{
+		transform-origin: center;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	to{
+		transform-origin: center;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@keyframes MenuLinkGrowWidth {
+	from{
+		width: 0;
+	}
+
+	to{
+		width: 65px;
+	}
+}

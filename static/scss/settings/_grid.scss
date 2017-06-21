@@ -1,0 +1,19 @@
+
+// setting up the grid
+@include gridle_setup( (
+    context : 12,
+    gutter-width : 20px,
+    direction : ltr,
+) );
+
+// make the use of media queries really easy
+@include gridle_register_state ( mobile , (
+    max-width : 480px
+) );
+@include gridle_register_state ( tablet , (
+    min-width : 481px,
+    max-width : 1024px
+) ) ;
+@include gridle_register_state ( desktop , (
+    min-width : 1024px
+) ) ;

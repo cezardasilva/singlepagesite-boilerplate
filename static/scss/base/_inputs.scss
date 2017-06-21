@@ -1,0 +1,21 @@
+
+#{$text-inputs-list} {
+	@include main-font();
+	@include transition(all .2s);
+
+	border-style: solid;
+	width: 100%;
+
+	padding-top: 10px;
+	padding-bottom: 5px;
+
+	/* Remove Chrome's Yellow Background */
+	&:-webkit-autofill{
+		-webkit-box-shadow: 0 0 0px 1000px $white inset;
+		background-color: transparent !important;
+	}
+
+	&:active, &:focus{
+		outline: none;
+	}
+}

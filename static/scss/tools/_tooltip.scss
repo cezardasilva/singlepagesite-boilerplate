@@ -1,0 +1,74 @@
+// Mixins
+@mixin has-tooltip($tooltip-transition-duration: .3s) {
+	$tooltip-transitions:
+	opacity $tooltip-transition-duration ease-out 0s,
+	transform $tooltip-transition-duration ease-out 0s;
+
+	position: relative;
+
+	// Display the tooltip on hover and on focus.
+	&:hover, &:focus {
+		.tooltip {
+			visibility: visible;
+			opacity: 1;
+			transform: translate(-50%, 0);
+			transition:
+			visibility 0s linear 0s,
+			$tooltip-transitions;
+		}
+	}
+}
+
+@mixin tooltip($tooltip-background-color: white,
+$tooltip-arrow-base: 2em,
+$tooltip-arrow-length: 1em,
+$tooltip-border-width: 0,
+$tooltip-border-color: false,
+$tooltip-transition-duration: .3s) {
+
+	$tooltip-transitions:
+	opacity $tooltip-transition-duration ease-in 0s,
+	transform $tooltip-transition-duration ease-in 0s;
+
+	visibility: hidden;
+	box-sizing: border-box;
+	position: absolute;
+	left: 50%;
+	bottom: 100%; // displayed on top
+	margin-bottom: $tooltip-arrow-length;
+	background-color: $tooltip-background-color;
+	opacity: 0;
+	transform: translate(-50%, $tooltip-arrow-length);
+	transition:
+	visibility 0s linear $tooltip-transition-duration,
+	$tooltip-transitions;
+	pointer-events: none;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 100%; left: 50%;
+		width: 0; height: 0;
+		// Draw a triangle.
+		border-top: ($tooltip-arrow-length - $tooltip-border-width) solid $tooltip-background-color;
+		border-left: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent;
+		border-right: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent;
+		margin-left: ($tooltip-border-width - $tooltip-arrow-base / 2); // center the triangle
+	}
+
+	@if $tooltip-border-width {
+		border: $tooltip-border-width solid $tooltip-border-color;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 100%; left: 50%;
+			width: 0; height: 0;
+			// Draw another triangle to simulate a border.
+			border-top: $tooltip-arrow-length solid $tooltip-border-color;
+			border-left: ($tooltip-arrow-base / 2) solid transparent;
+			border-right: ($tooltip-arrow-base / 2) solid transparent;
+			margin-left: ($tooltip-arrow-base / -2); // center the triangle
+		}
+	}
+}

@@ -1,0 +1,39 @@
+
+
+header.header{
+	background-color: $white;
+	height: 110px;
+	width: 100%;
+
+	.header-wrapper{
+		height: inherit;
+
+	}
+
+	.logo{
+		img{
+			width: 270px;
+			height: 70px;
+		}
+		h1{
+			display: none;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+	.menu{
+		$text-color: #808080;
+	    display: flex;
+		align-items: center;
+	    flex-flow: row;
+		a{
+			position: relative;
+			color: $text-color;
+			text-transform: uppercase;
+			padding: 5px 20px;
+			@include transition(all 0.5s);
+		}
+	}
+
+}

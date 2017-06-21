@@ -1,0 +1,93 @@
+.hamburger-menu{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 62px;
+	height: 62px;
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	border: none;
+	cursor: pointer;
+	transition: background 0.3s;
+	z-index: 9999;
+	&:focus{
+		outline: none;
+	}
+	&.is-homepage{
+		span{
+			background: $white;
+			&::after, &::before{
+				background: $white;
+
+			}
+		}
+	}
+
+	&.is-active{
+		span{
+			background: none;
+
+			&::after, &::before{
+				transition-delay: 0s, 0.3s;
+			}
+
+			&::after{
+				bottom: 0;
+				transform: rotate(-45deg);
+			}
+
+			&::before{
+				top: 0;
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	span{
+		display: block;
+		position: absolute;
+		top: calc(62px / 2);
+		left: 18px;
+		right: 18px;
+		height: 2px;
+		@include gridle_state(mobile) {
+			background: white;
+		}
+		border-radius: 3px;
+		background-color: #333;
+
+		transition: background 0s 0.3s;
+
+		&::after, &::before{
+			position: absolute;
+			display: block;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			@include gridle_state(mobile) {
+				background-color: #fff;
+			}
+			background-color: #333;
+			content: "";
+			border-radius: 3px;
+			transition-duration: 0.3s, 0.3s;
+			transition-delay: 0.3s, 0s;
+		}
+
+		&::after{
+			bottom: -6px;
+			transition-property: bottom, transform;
+		}
+
+		&::before{
+			bottom: 6px;
+			transition-property: top, transform;
+		}
+	}
+
+}

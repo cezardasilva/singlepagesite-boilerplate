@@ -1,0 +1,28 @@
+@include gridle_generate_classes();
+
+html{
+	position: relative;
+	min-height: 100%;
+}
+
+body{
+	@include main-font();
+	position: absolute;
+	width: 100%;
+	font-size: 16px;
+	background: $white;
+	min-height: 100%;
+	overflow-x: hidden;
+	@include gridle_state(mobile) {
+		font-size: 14px;
+	}
+}
+
+// manage container width :
+.container {
+	max-width : 1200px;
+	margin : 0 auto;
+	@include gridle_state(mobile) {
+		max-width: 297px;
+	}
+}
